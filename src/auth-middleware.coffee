@@ -57,7 +57,7 @@ module.exports = (robot) ->
 
   robot.listenerMiddleware (context, next, done) ->
     opts    = context.listener.options
-    reqUser = context.response.message.user
+    reqUser = robot.brain.userForName(context.response.message.user.name)
     reqRoom = context.response.message.room
     reqMsg  = context.response.message.text
     action  = successAction
