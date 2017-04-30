@@ -78,7 +78,7 @@ module.exports = (robot) ->
       if opts.rooms != undefined 
         if reqRoom not in opts.rooms
           action = 'Rejecting (room)'
-          authFail context, "#{action} '#{reqUser.name}: #{reqMsg}' -- use this room: #{opts.room}"
+          authFail context, "#{action} '#{reqUser.name}: #{reqMsg}' -- use this room: #{opts.rooms}"
       if opts.roles != undefined
         if robot.auth.hasRole(reqUser, opts.roles) is false
           action = 'Rejecting (role)'
